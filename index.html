@@ -11,15 +11,43 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="manifest" href="manifest.json">
-<script>
-    window.location.replace(
-      "https://www.instagram.com/direct/inbox/"
-    );
-  </script>
-  
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+    }
+
+    .loading {
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
 </head>
 
 <body>
-  Opening Instagram DMs...
+
+  <div class="loading">
+    Opening Instagram DMs…
+  </div>
+
+  <script>
+    // Only redirect when running as the Home Screen web app.
+    const isStandalone =
+      window.navigator.standalone === true ||
+      window.matchMedia('(display-mode: standalone)').matches;
+
+    if (isStandalone) {
+      window.location.replace(
+        "https://www.instagram.com/direct/inbox/"
+      );
+    }
+  </script>
+
 </body>
 </html>
