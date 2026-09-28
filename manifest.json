@@ -1,0 +1,9 @@
+{
+  "name": "Instagram DMs",
+  "short_name": "IG DMs",
+  "start_url": "./",
+  "display": "standalone",
+  "scope": "./",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
